@@ -1,0 +1,96 @@
+{
+    "app_name": "Modern Gui Python Application",
+    "version" : "v1.0.0",
+    "copyright" : "By: Alireza Abbasian",
+    "year" : 2021,
+    "theme_name" : "default",
+    "custom_title_bar": true,
+    "startup_size": [
+        1400,
+        720
+    ],
+    "minimum_size": [
+        960,
+        540
+    ],
+    "lef_menu_size" : {
+        "minimum" : 60,
+        "maximum" : 240
+    },
+    "left_menu_content_margins" : 3,
+    "left_column_size" : {
+        "minimum" : 0,
+        "maximum" : 240
+    },
+    "right_column_size" : {
+        "minimum" : 0,
+        "maximum" : 240
+    },
+    "time_animation" : 500,
+    "font" : {
+        "family" : "Segoe UI",
+        "title_size" : 10,
+        "text_size" : 9
+    },
+
+    "data" : {
+        "left_menus" : [
+            {
+                "btn_icon" : "icon_home.svg",
+                "btn_id" : "btn_home",
+                "btn_text" : "Home",
+                "show_top" : true,
+                "is_active" : true
+            },
+            {
+                "btn_icon" : "icon_widgets.svg",
+                "btn_id" : "btn_widgets",
+                "btn_text" : "Show Custom Widgets",
+                "show_top" : true,
+                "is_active" : false
+            },
+            {
+                "btn_icon" : "icon_add_user.svg",
+                "btn_id" : "btn_add_user",
+                "btn_text" : "Add Users",
+                "show_top" : true,
+                "is_active" : false
+            },
+            {
+                "btn_icon" : "icon_file.svg",
+                "btn_id" : "btn_new_file",
+                "btn_text" : "New File",
+                "show_top" : true,
+                "is_active" : false
+            },
+            {
+                "btn_icon" : "icon_folder_open.svg",
+                "btn_id" : "btn_open_file",
+                "btn_text" : "Open File",
+                "show_top" : true,
+                "is_active" : false
+            },
+            {
+                "btn_icon" : "icon_save.svg",
+                "btn_id" : "btn_save",
+                "btn_text" : "Save File",
+                "show_top" : true,
+                "is_active" : false
+            },
+            {
+                "btn_icon" : "icon_info.svg",
+                "btn_id" : "btn_info",
+                "btn_text" : "Information",
+                "show_top" : false,
+                "is_active" : false
+            },
+            {
+                "btn_icon" : "icon_settings.svg",
+                "btn_id" : "btn_settings",
+                "btn_text" : "Settings",
+                "show_top" : false,
+                "is_active" : false
+            }
+        ]
+    } 
+}

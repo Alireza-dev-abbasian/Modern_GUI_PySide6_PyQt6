@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="images">
+    <file>res/images/logo.ico</file>
+    <file>res/images/logo.png</file>
+  </qresource>
+  <qresource prefix="icons">
+    <file>res/icons/icon_info.svg</file>
+    <file>res/icons/icon_close.svg</file>
+    <file>res/icons/icon_restore.svg</file>
+    <file>res/icons/icon_home.svg</file>
+    <file>res/icons/icon_maximize.svg</file>
+    <file>res/icons/icon_menu.svg</file>
+    <file>res/icons/icon_minimize.svg</file>
+    <file>res/icons/icon_settings.svg</file>
+    <file>res/icons/icon_widgets.svg</file>
+  </qresource>
+</RCC>

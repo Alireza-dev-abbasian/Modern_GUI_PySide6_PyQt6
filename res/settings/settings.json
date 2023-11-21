@@ -13,7 +13,7 @@
         960,
         540
     ],
-    "lef_menu_size" : {
+    "left_menu_size" : {
         "minimum" : 60,
         "maximum" : 240
     },
@@ -22,7 +22,7 @@
         "minimum" : 0,
         "maximum" : 240
     },
-    "right_column_size" : {
+    "right_box_size" : {
         "minimum" : 0,
         "maximum" : 240
     },

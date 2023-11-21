@@ -16,10 +16,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
         self.setupObjects()
-        SetupUIWindow.setup_ui(self)
-        SetupUIWindow.setup_pages_ui(self)
+        self.ui_extra = SetupUIWindow(self)
         self.functions = SetupFunctionWindow(self)
     
     def mousePressEvent(self, event):

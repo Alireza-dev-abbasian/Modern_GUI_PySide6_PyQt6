@@ -9,9 +9,7 @@ class SetupFunctionWindow:
             self.settings = main_window.settings
             self.themes = main_window.themes
             self.setupSignals()
-        
-        # self is MainWindow
-        
+                    
         def mousePressEvent(self, event):
             if event.buttons() == Qt.LeftButton:
                 self.main_window.drag_start_position = event.globalPos() - self.main_window.frameGeometry().topLeft()
@@ -27,11 +25,12 @@ class SetupFunctionWindow:
             self.ui.btn_minimize.clicked.connect(lambda: self.main_window.showMinimized())
             self.ui.btn_maximize_restore.toggled.connect(lambda checked: self.maximizeRestore(checked))
             self.ui.menu_button.clicked.connect(lambda: self.open_close_frame(
-                self.ui.leftMenuFrame, self.settings["lef_menu_size"]['minimum'], self.settings["lef_menu_size"]['maximum'])
+                self.ui.leftMenuFrame, self.settings["left_menu_size"]['minimum'], self.settings["left_menu_size"]['maximum'])
             )
             self.ui.btn_menu_home.clicked.connect(lambda: self.btn_clicked(self.ui.btn_menu_home))
             self.ui.btn_menu_settings.clicked.connect(lambda: self.btn_clicked(self.ui.btn_menu_settings))
             self.ui.btn_menu_info.clicked.connect(lambda: self.btn_clicked(self.ui.btn_menu_info))
+            self.ui.btn_connect.clicked.connect(lambda checked: self.btn_clicked(self.ui.btn_connect))
         
         def btn_clicked(self, btn):
             # GET BUTTON CLICKED
@@ -48,6 +47,20 @@ class SetupFunctionWindow:
             if btn_name == "btn_menu_settings":
                 self.set_page(self.ui.load_pages.page_settings)
                 self.select_menu(btn.objectName())
+            
+            if btn_name == "btn_connect":
+                self.open_close_frame(self.ui.rightBoxFrame, self.settings["right_box_size"]['minimum'], self.settings["right_box_size"]['maximum'])
+                if btn.isChecked():
+                    btn.setStyleSheet(f"""
+                    #{btn.objectName()} {{
+                        background-color:{self.themes["app_color"]["red"]};
+                    }}""")
+                else:
+                    btn.setStyleSheet(f"""
+                    #{btn.objectName()} {{
+                        background-color:{self.themes["app_color"]["green"]};
+                    }}""")
+            
 
             # PRINT BTN NAME
             print(f'Button "{btn_name}" pressed!')
@@ -78,7 +91,7 @@ class SetupFunctionWindow:
             width = menu.width()
             
             # SET MAX WIDTH
-            if width == 60:
+            if width == min_widht:
                 width_extended = max_width
             else:
                 width_extended = min_widht

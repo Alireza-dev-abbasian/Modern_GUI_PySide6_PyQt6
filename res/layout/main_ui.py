@@ -167,6 +167,9 @@ class Ui_MainWindow(object):
 
         self.verticalMenuLayout.addWidget(self.leftMenuBottomFrame, 0, Qt.AlignBottom)
 
+        self.leftMenuBottomFrame.raise_()
+        self.toggleBox.raise_()
+        self.leftMenuTopFrame.raise_()
 
         self.verticalLayout_3.addWidget(self.leftMenu)
 
@@ -203,7 +206,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3 = QHBoxLayout(self.contentTopTitleFrame)
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 10, 0)
         self.contentTopTitle = QLabel(self.contentTopTitleFrame)
         self.contentTopTitle.setObjectName(u"contentTopTitle")
         sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
@@ -216,6 +219,17 @@ class Ui_MainWindow(object):
         self.contentTopTitle.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.horizontalLayout_3.addWidget(self.contentTopTitle)
+
+        self.btn_connect = QPushButton(self.contentTopTitleFrame)
+        self.btn_connect.setObjectName(u"btn_connect")
+        self.btn_connect.setMinimumSize(QSize(70, 30))
+        self.btn_connect.setMaximumSize(QSize(70, 16777215))
+        icon = QIcon()
+        icon.addFile(u":/icons/res/icons/icon_widgets.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_connect.setIcon(icon)
+        self.btn_connect.setCheckable(True)
+
+        self.horizontalLayout_3.addWidget(self.btn_connect)
 
 
         self.horizontalLayout.addWidget(self.contentTopTitleFrame)
@@ -233,9 +247,9 @@ class Ui_MainWindow(object):
         self.btn_minimize.setObjectName(u"btn_minimize")
         self.btn_minimize.setMinimumSize(QSize(28, 28))
         self.btn_minimize.setMaximumSize(QSize(28, 28))
-        icon = QIcon()
-        icon.addFile(u":/icons/res/icons/icon_minimize.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_minimize.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/res/icons/icon_minimize.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_minimize.setIcon(icon1)
         self.btn_minimize.setIconSize(QSize(10, 10))
 
         self.horizontalLayout_2.addWidget(self.btn_minimize)
@@ -251,9 +265,9 @@ class Ui_MainWindow(object):
         font2.setItalic(False)
         font2.setStyleStrategy(QFont.PreferDefault)
         self.btn_maximize_restore.setFont(font2)
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/res/icons/icon_maximize.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_maximize_restore.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/res/icons/icon_maximize.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_maximize_restore.setIcon(icon2)
         self.btn_maximize_restore.setIconSize(QSize(10, 10))
         self.btn_maximize_restore.setCheckable(True)
 
@@ -264,9 +278,9 @@ class Ui_MainWindow(object):
         self.btn_close.setMinimumSize(QSize(28, 28))
         self.btn_close.setMaximumSize(QSize(28, 28))
         self.btn_close.setMouseTracking(False)
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/res/icons/icon_close.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_close.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/res/icons/icon_close.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_close.setIcon(icon3)
         self.btn_close.setIconSize(QSize(10, 10))
 
         self.horizontalLayout_2.addWidget(self.btn_close)
@@ -300,33 +314,25 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.content_area_frame)
 
-        self.extraRightBox = QFrame(self.content)
-        self.extraRightBox.setObjectName(u"extraRightBox")
-        self.extraRightBox.setMinimumSize(QSize(0, 0))
-        self.extraRightBox.setMaximumSize(QSize(0, 16777215))
-        self.extraRightBox.setFrameShape(QFrame.NoFrame)
-        self.extraRightBox.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_7 = QVBoxLayout(self.extraRightBox)
-        self.verticalLayout_7.setSpacing(0)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.themeSettingsTopDetail = QFrame(self.extraRightBox)
-        self.themeSettingsTopDetail.setObjectName(u"themeSettingsTopDetail")
-        self.themeSettingsTopDetail.setMaximumSize(QSize(16777215, 3))
-        self.themeSettingsTopDetail.setFrameShape(QFrame.NoFrame)
-        self.themeSettingsTopDetail.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_7.addWidget(self.themeSettingsTopDetail)
-
-        self.contentSettings = QFrame(self.extraRightBox)
-        self.contentSettings.setObjectName(u"contentSettings")
-        self.contentSettings.setFrameShape(QFrame.NoFrame)
-        self.contentSettings.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_13 = QVBoxLayout(self.contentSettings)
-        self.verticalLayout_13.setSpacing(0)
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.topMenus = QFrame(self.contentSettings)
+        self.rightBoxFrame = QFrame(self.content)
+        self.rightBoxFrame.setObjectName(u"rightBoxFrame")
+        self.rightBoxFrame.setMinimumSize(QSize(0, 0))
+        self.rightBoxFrame.setMaximumSize(QSize(0, 16777215))
+        self.rightBoxFrame.setFrameShape(QFrame.NoFrame)
+        self.rightBoxFrame.setFrameShadow(QFrame.Raised)
+        self.rightMenuLayout = QVBoxLayout(self.rightBoxFrame)
+        self.rightMenuLayout.setSpacing(0)
+        self.rightMenuLayout.setObjectName(u"rightMenuLayout")
+        self.rightMenuLayout.setContentsMargins(0, 0, 0, 0)
+        self.rightBox = QFrame(self.rightBoxFrame)
+        self.rightBox.setObjectName(u"rightBox")
+        self.rightBox.setFrameShape(QFrame.NoFrame)
+        self.rightBox.setFrameShadow(QFrame.Raised)
+        self.contentRightMenuLayout = QVBoxLayout(self.rightBox)
+        self.contentRightMenuLayout.setSpacing(0)
+        self.contentRightMenuLayout.setObjectName(u"contentRightMenuLayout")
+        self.contentRightMenuLayout.setContentsMargins(0, 0, 0, 0)
+        self.topMenus = QFrame(self.rightBox)
         self.topMenus.setObjectName(u"topMenus")
         self.topMenus.setFrameShape(QFrame.NoFrame)
         self.topMenus.setFrameShadow(QFrame.Raised)
@@ -334,47 +340,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.btn_message = QPushButton(self.topMenus)
-        self.btn_message.setObjectName(u"btn_message")
-        sizePolicy.setHeightForWidth(self.btn_message.sizePolicy().hasHeightForWidth())
-        self.btn_message.setSizePolicy(sizePolicy)
-        self.btn_message.setMinimumSize(QSize(0, 45))
-        self.btn_message.setFont(font)
-        self.btn_message.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_message.setLayoutDirection(Qt.LeftToRight)
 
-        self.verticalLayout_14.addWidget(self.btn_message)
-
-        self.btn_print = QPushButton(self.topMenus)
-        self.btn_print.setObjectName(u"btn_print")
-        sizePolicy.setHeightForWidth(self.btn_print.sizePolicy().hasHeightForWidth())
-        self.btn_print.setSizePolicy(sizePolicy)
-        self.btn_print.setMinimumSize(QSize(0, 45))
-        self.btn_print.setFont(font)
-        self.btn_print.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_print.setLayoutDirection(Qt.LeftToRight)
-
-        self.verticalLayout_14.addWidget(self.btn_print)
-
-        self.btn_logout = QPushButton(self.topMenus)
-        self.btn_logout.setObjectName(u"btn_logout")
-        sizePolicy.setHeightForWidth(self.btn_logout.sizePolicy().hasHeightForWidth())
-        self.btn_logout.setSizePolicy(sizePolicy)
-        self.btn_logout.setMinimumSize(QSize(0, 45))
-        self.btn_logout.setFont(font)
-        self.btn_logout.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_logout.setLayoutDirection(Qt.LeftToRight)
-
-        self.verticalLayout_14.addWidget(self.btn_logout)
+        self.contentRightMenuLayout.addWidget(self.topMenus, 0, Qt.AlignTop)
 
 
-        self.verticalLayout_13.addWidget(self.topMenus, 0, Qt.AlignTop)
+        self.rightMenuLayout.addWidget(self.rightBox)
 
 
-        self.verticalLayout_7.addWidget(self.contentSettings)
-
-
-        self.horizontalLayout_4.addWidget(self.extraRightBox)
+        self.horizontalLayout_4.addWidget(self.rightBoxFrame)
 
 
         self.verticalLayout_6.addWidget(self.content)
@@ -412,6 +385,8 @@ class Ui_MainWindow(object):
 
         self.appLayout.addWidget(self.contentFrame)
 
+        self.contentFrame.raise_()
+        self.leftMenuFrame.raise_()
 
         self.appMargins.addWidget(self.bgApp)
 
@@ -431,6 +406,7 @@ class Ui_MainWindow(object):
         self.btn_menu_info.setText(QCoreApplication.translate("MainWindow", u"Info", None))
         self.btn_menu_settings.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.contentTopTitle.setText(QCoreApplication.translate("MainWindow", u"Modern Gui Python APP", None))
+        self.btn_connect.setText("")
 #if QT_CONFIG(tooltip)
         self.btn_minimize.setToolTip(QCoreApplication.translate("MainWindow", u"Minimize", None))
 #endif // QT_CONFIG(tooltip)
@@ -442,9 +418,6 @@ class Ui_MainWindow(object):
         self.btn_close.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_close.setText("")
-        self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
-        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
-        self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
         self.credits_label.setText(QCoreApplication.translate("MainWindow", u"By: Alireza Abbasian", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.0", None))
     # retranslateUi

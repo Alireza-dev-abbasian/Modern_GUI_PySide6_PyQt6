@@ -22,8 +22,8 @@
         "text_font" : "9pt 'Segoe UI'",
         "white" : "#f5f6f9",
         "pink" : "#ff007f",
-        "green" : "#00ff7f",
-        "red" : "#ff5555",
+        "green" : "#388E3C",
+        "red" : "#D32F2F",
         "yellow" : "#f1fa8c",
         "gray" : "#9E9E9E"
     }
